@@ -3,8 +3,6 @@ const fn = (v: boolean) => {
   else return 2;
 };
 
-type MyReturnType<T> = T extends (...args: any[]) => infer R ? R : T;
-
-type b = MyReturnType<String>;
+type MyReturnType<T> = T extends (...args: any[]) => infer R ? R : never;
 
 type a = MyReturnType<typeof fn>;
